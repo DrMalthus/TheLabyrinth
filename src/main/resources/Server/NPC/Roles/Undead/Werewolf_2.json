@@ -1,0 +1,86 @@
+{
+  "$Comment": "Debug: DisplayState",
+  "Debug": "DisplayState",
+  "Type": "Abstract",
+  "Parameters": {
+    "Appearance": {
+      "Value": "Werewolf",
+      "Description": "Model to be used"
+    },
+    "MaxHealth": {
+      "Value": 100,
+      "Description": "Max health for the NPC"
+    },
+    "ViewRange": {
+      "Value": 1,
+      "Description": "View range in blocks"
+    },
+    "ViewSector": {
+      "Value": 180,
+      "Description": "View sector in degrees"
+    },
+    "HearingRange": {
+      "Value": 6,
+      "Description": "Hearing range in blocks"
+    },
+    "AlertedRange": {
+      "Value": 2,
+      "Description": "A range within which the player can be seen/sensed when the NPC is alerted to their presence"
+    },
+    "AttackDistance": {
+      "Value": 2,
+      "Description": "The distance at which an NPC will execute attacks"
+    },
+    "LeashDistance": {
+      "Value": 4,
+      "Description": "The range after which an NPC will start to want to return to their spawn point."
+    },
+    "NameTranslationKey": {
+      "Value": "server.npcRoles.Template.name",
+      "Description": "Translation key for NPC name display"
+    }
+  },
+  "Appearance": {
+    "Compute": "Appearance"
+  },
+  "DropList": {
+    "Compute": "DropList"
+  },
+  "MaxHealth": {
+    "Compute": "MaxHealth"
+  },
+  "StartState": "Idle",
+  "DefaultPlayerAttitude": "Hostile",
+  "DefaultNPCAttitude": "Ignore",
+  "KnockbackScale": 0.5,
+  "MotionControllerList": [
+    {
+      "Type": "Walk",
+      "MaxWalkSpeed": 3,
+      "Gravity": 10,
+      "MaxFallSpeed": 8,
+      "Acceleration": 10
+    }
+  ],
+  "InteractionVars": {
+    "Melee_Damage": {
+      "Interactions": [
+        {
+          "Parent": "NPC_Attack_Melee_Damage",
+          "DamageCalculator": {
+            "Type": "Absolute",
+            "BaseDamage": {
+              "Physical": 10000
+            },
+            "RandomPercentageModifier": 0.1
+          }
+        }
+      ]
+    }
+  },
+  "StateTransitions": [],
+  "Instructions": [],
+  "NameTranslationKey": {
+    "Compute": "NameTranslationKey"
+  }
+}

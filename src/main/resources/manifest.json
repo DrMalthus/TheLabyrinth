@@ -17,5 +17,6 @@
   "LoadBefore": {},
   "DisabledByDefault": false,
   "IncludesAssetPack": false,
-  "SubPlugins": []
+  "Main": "${plugin_main_entrypoint}",
+  "Entrypoint": "${plugin_main_entrypoint}"
 }
