@@ -1,0 +1,61 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Labyrinth_Board.name",
+    "Description": "server.items.Labyrinth_Board.description"
+  },
+  "Icon": "Icons/ItemsGenerated/Labyrinth_Board.png",
+  "ItemLevel": 15,
+  "MaxStack": 1,
+  "IconProperties": {
+    "Scale": 0.8,
+    "Rotation": [
+      91,
+      102,
+      78
+    ],
+    "Translation": [
+      1,
+      -1
+    ]
+  },
+  "Categories": [
+    "Furniture.Furniture"
+  ],
+  "BlockType": {
+    "Material": "Solid",
+    "DrawType": "Model",
+    "Opacity": "Transparent",
+    "CustomModel": "Resources/Tiles/Board.blockymodel",
+    "CustomModelTexture": [
+      {
+        "Weight": 0,
+        "Texture": "Resources/Tiles/Board_Texture.png"
+      }
+    ],
+    "CustomModelScale": 0.75,
+    "HitboxType": "Plant_Full",
+    "BlockParticleSetId": "Wood",
+    "BlockSoundSetId": "Wood",
+    "ParticleColor": "#63412c",
+    "Support": {
+      "Down": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "TextureComputedColor": "#321D12",
+    "VariantRotation": "NESW",
+    "RequiresAlphaBlending": false
+  },
+  "PlayerAnimationsId": "Item",
+  "Tags": {
+    "Type": [
+      "Container"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Wood",
+  "Model": "Resources/Tiles/Board.blockymodel",
+  "Texture": "Resources/Tiles/Board_Texture.png",
+  "Quality": "Tool"
+}

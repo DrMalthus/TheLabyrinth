@@ -1,0 +1,40 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Labyrinth_Tile.name"
+  },
+  "Model": "Resources/Tiles/labyrinth-tile.blockymodel",
+  "Texture": "Resources/Tiles/Labyrinth_Tile.png",
+  "Icon": "Icons/ItemsGenerated/Labyrinth_Tile.png",
+  "PlayerAnimationsId": "Block",
+  "Quality": "Tool",
+  "ItemLevel": 15,
+  "Categories": [
+    "Blocks.Ores"
+  ],
+  "IconProperties": {
+    "Scale": 2,
+    "Rotation": [
+      174,
+      215,
+      244
+    ],
+    "Translation": [
+      0,
+      -2
+    ]
+  },
+  "Utility": {
+    "Compatible": false
+  },
+  "Tags": {
+    "Type": [
+      "Weapon"
+    ],
+    "Family": [
+      "Sword"
+    ]
+  },
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "MaxStack": 1,
+  "DropOnDeath": true
+}

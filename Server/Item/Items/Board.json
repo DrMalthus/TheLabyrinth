@@ -1,0 +1,48 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Labyrinth_Board.name",
+    "Description": "server.items.Labyrinth_Board.description"
+  },
+  "Model": "Resources/Tiles/Board.blockymodel",
+  "Texture": "Resources/Tiles/Board_Texture.png",
+  "Icon": "Icons/ItemsGenerated/Board.png",
+  "PlayerAnimationsId": "Block",
+  "Quality": "Tool",
+  "ItemLevel": 15,
+  "Categories": [
+    "Blocks.Deco"
+  ],
+  "IconProperties": {
+    "Scale": 1.1,
+    "Rotation": [
+      124,
+      187,
+      164
+    ],
+    "Translation": [
+      0,
+      -2
+    ]
+  },
+  "Utility": {
+    "Compatible": false
+  },
+  "Tags": {
+    "Type": [],
+    "Family": []
+  },
+  "ItemSoundSetId": "ISS_Blocks_Stone",
+  "MaxStack": 1,
+  "DropOnDeath": true,
+  "SubCategory": "BlockSets",
+  "Set": "Cloth_Wool_White",
+  "BlockType": {
+    "DrawType": "Model",
+    "Material": "Solid",
+    "TextureSideMask": "Resources/Tiles/Board_Texture.png",
+    "Opacity": "Transparent",
+    "CustomModel": "Resources/Tiles/Board.blockymodel",
+    "CubeShadingMode": "Standard",
+    "VariantRotation": "NESW"
+  }
+}
