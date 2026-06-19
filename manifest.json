@@ -1,0 +1,21 @@
+{
+  "Group": "Hycredible",
+  "Name": "ModjamLabyrinth",
+  "Version": "0.1.0",
+  "Description": "A pack for a horror minigame including tileset for labyrinths",
+  "Authors": [
+    {
+      "Name": "regenesis",
+      "Email": "",
+      "Url": ""
+    }
+  ],
+  "Website": "",
+  "ServerVersion": ">=0.5.6 <0.6.0",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false,
+  "SubPlugins": []
+}

@@ -1,0 +1,16 @@
+{
+  "Group": "Runic",
+  "Name": "Labyrinth",
+  "Description": "A tileset for labyrinths",
+  "Authors": [
+    {
+      "Name": "regenesis"
+    }
+  ],
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "LoadBefore": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false,
+  "SubPlugins": []
+}
