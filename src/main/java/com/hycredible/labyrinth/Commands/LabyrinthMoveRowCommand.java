@@ -29,8 +29,18 @@ import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
 public class LabyrinthMoveRowCommand extends CommandBase {
+
+    private static final ScheduledExecutorService ANIMATOR =
+        Executors.newSingleThreadScheduledExecutor(r -> {
+            Thread t = new Thread(r, "labyrinth-animator");
+            t.setDaemon(true);
+            return t;
+        });
 
     static final int SECTION_SIZE = 6;
     static final int CLEAR_SETTINGS =
@@ -48,10 +58,10 @@ public class LabyrinthMoveRowCommand extends CommandBase {
 
     // Movement
     private static final String AXIS = "Z";
-    private static final int CASCADE_COUNT = 6; // number of ADDITIONAL sections to push in the movement direction
+    private static final int CASCADE_COUNT = 7; // number of ADDITIONAL sections to push in the movement direction
     private static final int DISTANCE = 6;
     private static final int DIRECTION = -1; // positive/negative direction
-    private static final float SPEED = 10f;
+    private static final float SPEED = 0.8f;
 
     // Snapshot of the last committed move, used by LabyrinthUndoRowCommand.
     static MoveSnapshot lastSnapshot;
@@ -252,7 +262,7 @@ public class LabyrinthMoveRowCommand extends CommandBase {
             BlockType blockType = BlockType.getAssetMap().getAsset(blockId);
             if (blockType == null || blockType.getId() == null) return;
 
-            Vector3d startPos = new Vector3d(lx + 0.5, ly + 0.5, lz + 0.5);
+            Vector3d startPos = new Vector3d(lx + 0.5, ly, lz + 0.5);
             Holder<EntityStore> holder = BlockEntity.assembleDefaultBlockEntity(timeResource, blockType.getId(), startPos);
             holder.removeComponent(DespawnComponent.getComponentType());
 
@@ -294,16 +304,17 @@ public class LabyrinthMoveRowCommand extends CommandBase {
                 tc.setPosition(new Vector3d(s.x + t * deltaX, s.y, s.z + t * deltaZ));
             }
 
-            if (t < 1.0f) {
-                world.execute(tickHolder[0]);
-            } else {
-                if (playerStart != null && playerRef.isValid()) {
-                    TransformComponent tc = playerStore.getComponent(playerRef, TransformComponent.getComponentType());
-                    if (tc != null) {
-                        playerStore.putComponent(playerRef, Teleport.getComponentType(),
-                            Teleport.createForPlayer(new Vector3d(playerStart.x + deltaX, playerStart.y, playerStart.z + deltaZ), tc.getRotation()));
-                    }
+            if (playerStart != null && playerRef.isValid()) {
+                TransformComponent tc = playerStore.getComponent(playerRef, TransformComponent.getComponentType());
+                if (tc != null) {
+                    playerStore.putComponent(playerRef, Teleport.getComponentType(),
+                        Teleport.createForPlayer(new Vector3d(playerStart.x + deltaX, playerStart.y, playerStart.z + deltaZ), tc.getRotation()));
                 }
+            }
+
+            if (t < 1.0f) {
+                ANIMATOR.schedule(() -> world.execute(tickHolder[0]), 50, TimeUnit.MILLISECONDS);
+            } else {
                 for (Ref<EntityStore> entityRef : blockEntityRefs) {
                     if (entityRef.isValid()) {
                         entityStore.removeEntity(entityRef, RemoveReason.REMOVE);
