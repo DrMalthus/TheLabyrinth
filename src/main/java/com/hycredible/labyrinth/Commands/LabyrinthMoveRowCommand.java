@@ -38,12 +38,12 @@ public class LabyrinthMoveRowCommand extends CommandBase {
     private static final int PASSENGER_Y_EXTRA = 3;
 
     // Block offset from the LabyrinthState grid origin to where the labyrinth grid starts.
-    private static final int OFFSET_X = 48;
-    private static final int OFFSET_Z = 30;
+    private static final int OFFSET_X = 18;
+    private static final int OFFSET_Z = -12;
 
     // Which section to move (0-based section index within the grid).
-    private static final int SECTION_X = 0;
-    private static final int SECTION_Z = 0;
+    private static final int SECTION_X = 5;
+    private static final int SECTION_Z = 7;
 
     // Movement
     private static final String AXIS = "Z";
@@ -168,6 +168,19 @@ public class LabyrinthMoveRowCommand extends CommandBase {
                 passengerStarts.add(new Vector3d(tc.getPosition()));
             }
 
+            // The AABB query only covers world-store entities (NPCs/mobs).
+            // The executing player lives in the player store — check them separately.
+            Vector3d playerStart = null;
+            TransformComponent playerTc = store.getComponent(ref, TransformComponent.getComponentType());
+            if (playerTc != null) {
+                Vector3d pos = playerTc.getPosition();
+                if (pos.x >= aabbMin.x && pos.x < aabbMax.x &&
+                    pos.y >= aabbMin.y && pos.y < aabbMax.y &&
+                    pos.z >= aabbMin.z && pos.z < aabbMax.z) {
+                    playerStart = new Vector3d(pos);
+                }
+            }
+
             // Phase 2: clear source region
             for (int slot = 0; slot < totalSlots; slot++) {
                 int slotOffsetX = moveAlongX ? slot * SECTION_SIZE : 0;
@@ -198,10 +211,16 @@ public class LabyrinthMoveRowCommand extends CommandBase {
                     if (tc == null) continue;
                     tc.setPosition(new Vector3d(s.x + deltaX, s.y, s.z + deltaZ));
                 }
+                if (playerStart != null && ref.isValid()) {
+                    TransformComponent tc = store.getComponent(ref, TransformComponent.getComponentType());
+                    if (tc != null) {
+                        tc.teleportPosition(new Vector3d(playerStart.x + deltaX, playerStart.y, playerStart.z + deltaZ));
+                    }
+                }
                 selection.placeNoReturn(world, new Vector3i(deltaX, 0, deltaZ), entityStore);
                 lastSnapshot = snapshot;
             } else {
-                animateMove(world, entityStore, selection, deltaX, deltaZ, SPEED, passengers, passengerStarts, snapshot);
+                animateMove(world, entityStore, selection, deltaX, deltaZ, SPEED, passengers, passengerStarts, snapshot, ref, store, playerStart);
             }
         });
     }
@@ -215,7 +234,10 @@ public class LabyrinthMoveRowCommand extends CommandBase {
         float speed,
         List<Ref<EntityStore>> passengers,
         List<Vector3d> passengerStarts,
-        MoveSnapshot snapshot
+        MoveSnapshot snapshot,
+        Ref<EntityStore> playerRef,
+        Store<EntityStore> playerStore,
+        Vector3d playerStart
     ) {
         TimeResource timeResource = entityStore.getResource(TimeResource.getResourceType());
 
@@ -237,7 +259,7 @@ public class LabyrinthMoveRowCommand extends CommandBase {
             blockEntityStarts.add(startPos);
         });
 
-        if (blockEntityRefs.isEmpty() && passengers.isEmpty()) {
+        if (blockEntityRefs.isEmpty() && passengers.isEmpty() && playerStart == null) {
             selection.placeNoReturn(world, new Vector3i(deltaX, 0, deltaZ), entityStore);
             lastSnapshot = snapshot;
             return;
@@ -268,6 +290,13 @@ public class LabyrinthMoveRowCommand extends CommandBase {
                 TransformComponent tc = entityStore.getComponent(passengerRef, TransformComponent.getComponentType());
                 if (tc == null) continue;
                 tc.setPosition(new Vector3d(s.x + t * deltaX, s.y, s.z + t * deltaZ));
+            }
+
+            if (playerStart != null && playerRef.isValid()) {
+                TransformComponent tc = playerStore.getComponent(playerRef, TransformComponent.getComponentType());
+                if (tc != null) {
+                    tc.teleportPosition(new Vector3d(playerStart.x + t * deltaX, playerStart.y, playerStart.z + t * deltaZ));
+                }
             }
 
             if (t < 1.0f) {

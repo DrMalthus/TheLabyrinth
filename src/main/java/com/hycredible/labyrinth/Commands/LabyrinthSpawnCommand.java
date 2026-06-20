@@ -9,6 +9,7 @@ import com.hypixel.hytale.server.core.Message;
 import com.hypixel.hytale.server.core.command.system.CommandContext;
 import com.hypixel.hytale.server.core.command.system.basecommands.CommandBase;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
+import com.hypixel.hytale.server.core.modules.time.WorldTimeResource;
 import com.hypixel.hytale.server.core.universe.world.World;
 import com.hypixel.hytale.server.core.universe.world.storage.EntityStore;
 import org.joml.Vector3d;
@@ -52,8 +53,12 @@ public class LabyrinthSpawnCommand extends CommandBase {
             int gridOriginX = playerX - OFFSET_WEST;
             int gridOriginZ = playerZ - OFFSET_NORTH;
 
-            Placer.placePrefab("Labyrinth_Full", world, new Vector3i(playerX, playerY, playerZ));
+            Placer.placePrefab("Labyrinth_Triggerless", world, new Vector3i(playerX, playerY, playerZ));
             LabyrinthState.set(gridOriginX, playerY, gridOriginZ, SECTIONS_X, SECTIONS_Z);
+
+            Store<EntityStore> worldEntityStore = world.getEntityStore().getStore();
+            WorldTimeResource timeResource = worldEntityStore.getResource(WorldTimeResource.getResourceType());
+            timeResource.setDayTime(0.0, world, worldEntityStore);
 
             commandContext.sendMessage(Message.raw("Labyrinth spawned at " + playerX + " " + playerY + " " + playerZ));
         });
