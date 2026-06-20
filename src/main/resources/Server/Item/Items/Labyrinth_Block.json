@@ -1,0 +1,43 @@
+{
+  "TranslationProperties": {
+    "Name": "server.items.Labyrinth_Block.name",
+    "Description": "server.items.Labyrinth_Block.description"
+  },
+  "PlayerAnimationsId": "Block",
+  "Categories": [""],
+  "Quality": "Technical",
+  "Set": "",
+  "Icon": "Icons/ItemsGenerated/Rock_Volcanic_Brick_Smooth.png",
+  "BlockType": {
+    "BlockParticleSetId": "Stone",
+    "BlockSoundSetId": "Stone",
+    "Flags": {
+      "IsUsable": false
+    },
+    "Textures": [
+      {
+        "Sides": "BlockTextures/Rock_Volcanic_Brick_Smooth.png",
+        "UpDown": "BlockTextures/Rock_Volcanic_Brick_Smooth.png",
+        "Weight": 1
+      }
+    ],
+    "Supporting": {
+      "Up": [
+        {
+          "FaceType": "Full"
+        }
+      ]
+    },
+    "BlockEntity": {
+      "Components": {
+        "LabyrinthBlock": {}
+      }
+    },
+    "Material": "Solid",
+    "Opacity": "Transparent",
+    "ParticleColor": "#3f3331",
+    "DrawType": "Cube"
+  },
+  "MaxStack": 1,
+  "ItemSoundSetId": "ISS_Blocks_Stone"
+}
