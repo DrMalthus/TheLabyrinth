@@ -581466,7 +581466,7 @@
           "Position": {
             "X": 57.0,
             "Y": 2.5,
-            "Z": -10.0
+            "Z": 14.0
           },
           "Rotation": {
             "Pitch": 0.0,
@@ -581488,30 +581488,15 @@
               "Z": 3.0
             }
           },
-          "Effects": [
-            {
-              "Type": "ModifyTags",
-              "Event": "ENTER",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "Operation": "Set",
-              "TagKey": "brazier_lit",
-              "TagValue": "true",
-              "MatchKey": "brazier_lit",
-              "MatchValue": "",
-              "Radius": 5.0,
-              "Center": "Volume"
-            }
-          ],
           "Enabled": true,
           "TargetTypes": [
             "Player"
           ],
           "KeepLoaded": false,
           "Color": {
-            "X": 0.0,
-            "Y": 0.0,
-            "Z": 1.0
+            "X": 1.0,
+            "Y": 0.9490196108818054,
+            "Z": 0.0
           },
           "PrefabIndex": 0
         }
@@ -581521,9 +581506,9 @@
       "Components": {
         "Transform": {
           "Position": {
-            "X": 33.0,
+            "X": 21.0,
             "Y": 2.5,
-            "Z": -10.0
+            "Z": 2.0
           },
           "Rotation": {
             "Pitch": 0.0,
@@ -581547,16 +581532,28 @@
           },
           "Effects": [
             {
-              "Type": "ModifyTags",
+              "Type": "SetWeather",
               "Event": "ENTER",
               "Interval": 0.0,
               "Delay": 0.0,
-              "Operation": "Set",
-              "TagKey": "brazier_lit",
-              "TagValue": "true",
-              "MatchKey": "brazier_lit",
-              "MatchValue": "",
-              "Radius": 5.0,
+              "Weather": "Dungeon_Cursed_Crypt_Graveyard",
+              "PlayerOnly": true,
+              "ResetWeather": true
+            },
+            {
+              "Type": "SendMessage",
+              "Event": "ENTER",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "Message": "This place feels ... strange"
+            },
+            {
+              "Type": "TriggerNpcMarkers",
+              "Event": "ENTER",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "MarkerType": "Welcome_Animal",
+              "MatchTag": "",
               "Center": "Volume"
             }
           ],
@@ -581566,9 +581563,9 @@
           ],
           "KeepLoaded": false,
           "Color": {
-            "X": 0.0,
-            "Y": 0.0,
-            "Z": 1.0
+            "X": 1.0,
+            "Y": 0.8666666746139526,
+            "Z": 0.0
           },
           "PrefabIndex": 1
         }
@@ -581787,6 +581784,566 @@
       "Components": {
         "Transform": {
           "Position": {
+            "X": 33.0,
+            "Y": 2.5,
+            "Z": -10.0
+          },
+          "Rotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        },
+        "TriggerVolume": {
+          "Shape": {
+            "Type": "Box",
+            "Min": {
+              "X": -3.0,
+              "Y": -2.5,
+              "Z": -3.0
+            },
+            "Max": {
+              "X": 3.0,
+              "Y": 2.5,
+              "Z": 3.0
+            }
+          },
+          "Effects": [
+            {
+              "Type": "ModifyTags",
+              "Event": "ENTER",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "Operation": "Set",
+              "TagKey": "brazier_lit",
+              "TagValue": "true",
+              "MatchKey": "brazier_lit",
+              "MatchValue": "",
+              "Radius": 5.0,
+              "Center": "Volume"
+            }
+          ],
+          "Enabled": true,
+          "TargetTypes": [
+            "Player"
+          ],
+          "KeepLoaded": false,
+          "Color": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "PrefabIndex": 3
+        }
+      }
+    },
+    {
+      "Components": {
+        "Transform": {
+          "Position": {
+            "X": 65.5,
+            "Y": 2.5,
+            "Z": 14.0
+          },
+          "Rotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        },
+        "TriggerVolume": {
+          "Shape": {
+            "Type": "Box",
+            "Min": {
+              "X": -3.5,
+              "Y": -2.5,
+              "Z": -4.0
+            },
+            "Max": {
+              "X": 3.5,
+              "Y": 2.5,
+              "Z": 4.0
+            }
+          },
+          "Effects": [
+            {
+              "Type": "SetWeather",
+              "Event": "ENTER",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "Weather": "Zone4_Underground_Jungle",
+              "PlayerOnly": true,
+              "ResetWeather": false
+            }
+          ],
+          "Enabled": true,
+          "TargetTypes": [
+            "Player"
+          ],
+          "KeepLoaded": false,
+          "Color": {
+            "X": 0.3960784375667572,
+            "Y": 1.0,
+            "Z": 0.0
+          },
+          "PrefabIndex": 4
+        }
+      }
+    },
+    {
+      "Components": {
+        "Transform": {
+          "Position": {
+            "X": 22.5,
+            "Y": 0.5,
+            "Z": 12.5
+          },
+          "Rotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        },
+        "TriggerVolume": {
+          "Shape": {
+            "Type": "Box",
+            "Min": {
+              "X": -0.5,
+              "Y": -0.5,
+              "Z": -0.5
+            },
+            "Max": {
+              "X": 0.5,
+              "Y": 0.5,
+              "Z": 0.5
+            }
+          },
+          "Effects": [
+            {
+              "Type": "PlaceBlock",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "BlockType": "Furniture_Temple_Light_Brazier",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Origin": "VolumeOrigin",
+              "ReplaceMode": "Always"
+            },
+            {
+              "Type": "PlaySound",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "SoundEvent": "SFX_Brazier_Build",
+              "Volume": 1.0,
+              "Pitch": 1.0
+            }
+          ],
+          "Enabled": true,
+          "TargetTypes": [
+            "Player"
+          ],
+          "Tags": {
+            "brazier_lit": "false"
+          },
+          "KeepLoaded": false,
+          "Color": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.1568627506494522
+          },
+          "PrefabIndex": 5
+        }
+      }
+    },
+    {
+      "Components": {
+        "Transform": {
+          "Position": {
+            "X": 34.5,
+            "Y": 0.5,
+            "Z": -12.5
+          },
+          "Rotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        },
+        "TriggerVolume": {
+          "Shape": {
+            "Type": "Box",
+            "Min": {
+              "X": -0.5,
+              "Y": -0.5,
+              "Z": -0.5
+            },
+            "Max": {
+              "X": 0.5,
+              "Y": 0.5,
+              "Z": 0.5
+            }
+          },
+          "Effects": [
+            {
+              "Type": "PlaceBlock",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "BlockType": "Furniture_Jungle_Brazier",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Origin": "VolumeOrigin",
+              "ReplaceMode": "Always"
+            },
+            {
+              "Type": "PlaySound",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "SoundEvent": "SFX_Brazier_Build",
+              "Volume": 1.0,
+              "Pitch": 1.0
+            }
+          ],
+          "Enabled": true,
+          "TargetTypes": [
+            "Player"
+          ],
+          "Tags": {
+            "brazier_lit": "false"
+          },
+          "KeepLoaded": false,
+          "Color": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "CooldownMode": "TOTAL",
+          "PrefabIndex": 6
+        }
+      }
+    },
+    {
+      "Components": {
+        "Transform": {
+          "Position": {
+            "X": 34.5,
+            "Y": 0.5,
+            "Z": -8.5
+          },
+          "Rotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        },
+        "TriggerVolume": {
+          "Shape": {
+            "Type": "Box",
+            "Min": {
+              "X": -0.5,
+              "Y": -0.5,
+              "Z": -0.5
+            },
+            "Max": {
+              "X": 0.5,
+              "Y": 0.5,
+              "Z": 0.5
+            }
+          },
+          "Effects": [
+            {
+              "Type": "PlaceBlock",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.10000000149011612,
+              "BlockType": "Furniture_Jungle_Brazier",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Origin": "VolumeOrigin",
+              "ReplaceMode": "Always"
+            },
+            {
+              "Type": "PlaySound",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.10000000149011612,
+              "SoundEvent": "SFX_Brazier_Build",
+              "Volume": 10.0,
+              "Pitch": 10.0
+            }
+          ],
+          "Enabled": true,
+          "TargetTypes": [
+            "Player"
+          ],
+          "Tags": {
+            "brazier_lit": "false"
+          },
+          "KeepLoaded": false,
+          "Color": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "PrefabIndex": 7
+        }
+      }
+    },
+    {
+      "Components": {
+        "Transform": {
+          "Position": {
+            "X": 43.5,
+            "Y": 0.5,
+            "Z": 24.5
+          },
+          "Rotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        },
+        "TriggerVolume": {
+          "Shape": {
+            "Type": "Box",
+            "Min": {
+              "X": -0.5,
+              "Y": -0.5,
+              "Z": -0.5
+            },
+            "Max": {
+              "X": 0.5,
+              "Y": 0.5,
+              "Z": 0.5
+            }
+          },
+          "Effects": [
+            {
+              "Type": "PlaceBlock",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "BlockType": "Furniture_Temple_Dark_Brazier",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Origin": "VolumeOrigin",
+              "ReplaceMode": "Always"
+            },
+            {
+              "Type": "PlaySound",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "SoundEvent": "SFX_Brazier_Build",
+              "Volume": 1.0,
+              "Pitch": 1.0
+            }
+          ],
+          "Enabled": true,
+          "TargetTypes": [
+            "Player"
+          ],
+          "Tags": {
+            "brazier_lit": "false"
+          },
+          "KeepLoaded": false,
+          "Color": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "PrefabIndex": 8
+        }
+      }
+    },
+    {
+      "Components": {
+        "Transform": {
+          "Position": {
+            "X": 59.5,
+            "Y": 0.5,
+            "Z": -8.5
+          },
+          "Rotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        },
+        "TriggerVolume": {
+          "Shape": {
+            "Type": "Box",
+            "Min": {
+              "X": -0.5,
+              "Y": -0.5,
+              "Z": -0.5
+            },
+            "Max": {
+              "X": 0.5,
+              "Y": 0.5,
+              "Z": 0.5
+            }
+          },
+          "Effects": [
+            {
+              "Type": "PlaceBlock",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "BlockType": "Furniture_Human_Ruins_Brazier",
+              "Position": {
+                "X": 0.0,
+                "Y": 0.0,
+                "Z": 0.0
+              },
+              "Origin": "VolumeOrigin",
+              "ReplaceMode": "Always"
+            },
+            {
+              "Type": "PlaySound",
+              "Event": "TAG_ADDED",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "SoundEvent": "SFX_Brazier_Build",
+              "Volume": 1.0,
+              "Pitch": 1.0
+            }
+          ],
+          "Enabled": true,
+          "TargetTypes": [
+            "Player"
+          ],
+          "Tags": {
+            "brazier_lit": "false"
+          },
+          "KeepLoaded": false,
+          "Color": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "PrefabIndex": 9
+        }
+      }
+    },
+    {
+      "Components": {
+        "Transform": {
+          "Position": {
+            "X": 45.0,
+            "Y": 2.5,
+            "Z": 2.0
+          },
+          "Rotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        },
+        "TriggerVolume": {
+          "Shape": {
+            "Type": "Box",
+            "Min": {
+              "X": -3.0,
+              "Y": -2.5,
+              "Z": -3.0
+            },
+            "Max": {
+              "X": 3.0,
+              "Y": 2.5,
+              "Z": 3.0
+            }
+          },
+          "Enabled": true,
+          "TargetTypes": [
+            "Player"
+          ],
+          "KeepLoaded": false,
+          "Color": {
+            "X": 1.0,
+            "Y": 0.0,
+            "Z": 0.0
+          },
+          "PrefabIndex": 10
+        }
+      }
+    },
+    {
+      "Components": {
+        "Transform": {
+          "Position": {
+            "X": 45.0,
+            "Y": 2.5,
+            "Z": 26.0
+          },
+          "Rotation": {
+            "Pitch": 0.0,
+            "Yaw": 0.0,
+            "Roll": 0.0
+          }
+        },
+        "TriggerVolume": {
+          "Shape": {
+            "Type": "Box",
+            "Min": {
+              "X": -3.0,
+              "Y": -2.5,
+              "Z": -3.0
+            },
+            "Max": {
+              "X": 3.0,
+              "Y": 2.5,
+              "Z": 3.0
+            }
+          },
+          "Effects": [
+            {
+              "Type": "ModifyTags",
+              "Event": "ENTER",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "Operation": "Set",
+              "TagKey": "brazier_lit",
+              "TagValue": "true",
+              "MatchKey": "brazier_lit",
+              "MatchValue": "",
+              "Radius": 5.0,
+              "Center": "Volume"
+            }
+          ],
+          "Enabled": true,
+          "TargetTypes": [
+            "Player"
+          ],
+          "KeepLoaded": false,
+          "Color": {
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
+          },
+          "PrefabIndex": 11
+        }
+      }
+    },
+    {
+      "Components": {
+        "Transform": {
+          "Position": {
             "X": 59.5,
             "Y": 0.5,
             "Z": -12.5
@@ -581849,203 +582406,7 @@
             "Y": 0.0,
             "Z": 0.0
           },
-          "PrefabIndex": 3
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 43.5,
-            "Y": 0.5,
-            "Z": 28.5
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -0.5,
-              "Y": -0.5,
-              "Z": -0.5
-            },
-            "Max": {
-              "X": 0.5,
-              "Y": 0.5,
-              "Z": 0.5
-            }
-          },
-          "Effects": [
-            {
-              "Type": "PlaceBlock",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.05000000074505806,
-              "BlockType": "Furniture_Temple_Dark_Brazier",
-              "Position": {
-                "X": 0.0,
-                "Y": 0.0,
-                "Z": 0.0
-              },
-              "Origin": "VolumeOrigin",
-              "ReplaceMode": "Always"
-            },
-            {
-              "Type": "PlaySound",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.05000000074505806,
-              "SoundEvent": "SFX_Brazier_Build",
-              "Volume": 1.0,
-              "Pitch": 1.0
-            }
-          ],
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "Tags": {
-            "brazier_lit": "false"
-          },
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 4
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 33.0,
-            "Y": 2.5,
-            "Z": 26.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 1.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 5
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 33.0,
-            "Y": 2.5,
-            "Z": 2.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.9725490212440491,
-            "Z": 0.0
-          },
-          "PrefabIndex": 6
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 45.0,
-            "Y": 2.5,
-            "Z": 2.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 7
+          "PrefabIndex": 12
         }
       }
     },
@@ -582147,231 +582508,7 @@
             "Y": 1.0,
             "Z": 0.0
           },
-          "PrefabIndex": 8
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 45.0,
-            "Y": 2.5,
-            "Z": 14.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.9725490212440491,
-            "Z": 0.0
-          },
-          "PrefabIndex": 9
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 59.5,
-            "Y": 0.5,
-            "Z": -8.5
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -0.5,
-              "Y": -0.5,
-              "Z": -0.5
-            },
-            "Max": {
-              "X": 0.5,
-              "Y": 0.5,
-              "Z": 0.5
-            }
-          },
-          "Effects": [
-            {
-              "Type": "PlaceBlock",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "BlockType": "Furniture_Human_Ruins_Brazier",
-              "Position": {
-                "X": 0.0,
-                "Y": 0.0,
-                "Z": 0.0
-              },
-              "Origin": "VolumeOrigin",
-              "ReplaceMode": "Always"
-            },
-            {
-              "Type": "PlaySound",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "SoundEvent": "SFX_Brazier_Build",
-              "Volume": 1.0,
-              "Pitch": 1.0
-            }
-          ],
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "Tags": {
-            "brazier_lit": "false"
-          },
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 10
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 22.5,
-            "Y": 0.5,
-            "Z": 12.5
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -0.5,
-              "Y": -0.5,
-              "Z": -0.5
-            },
-            "Max": {
-              "X": 0.5,
-              "Y": 0.5,
-              "Z": 0.5
-            }
-          },
-          "Effects": [
-            {
-              "Type": "PlaceBlock",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "BlockType": "Furniture_Temple_Light_Brazier",
-              "Position": {
-                "X": 0.0,
-                "Y": 0.0,
-                "Z": 0.0
-              },
-              "Origin": "VolumeOrigin",
-              "ReplaceMode": "Always"
-            },
-            {
-              "Type": "PlaySound",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "SoundEvent": "SFX_Brazier_Build",
-              "Volume": 1.0,
-              "Pitch": 1.0
-            }
-          ],
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "Tags": {
-            "brazier_lit": "false"
-          },
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.0,
-            "Z": 0.1568627506494522
-          },
-          "PrefabIndex": 11
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 33.0,
-            "Y": 2.5,
-            "Z": 14.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 1.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 12
+          "PrefabIndex": 13
         }
       }
     },
@@ -582381,7 +582518,7 @@
           "Position": {
             "X": 57.0,
             "Y": 2.5,
-            "Z": 2.0
+            "Z": -10.0
           },
           "Rotation": {
             "Pitch": 0.0,
@@ -582403,17 +582540,32 @@
               "Z": 3.0
             }
           },
+          "Effects": [
+            {
+              "Type": "ModifyTags",
+              "Event": "ENTER",
+              "Interval": 0.0,
+              "Delay": 0.0,
+              "Operation": "Set",
+              "TagKey": "brazier_lit",
+              "TagValue": "true",
+              "MatchKey": "brazier_lit",
+              "MatchValue": "",
+              "Radius": 5.0,
+              "Center": "Volume"
+            }
+          ],
           "Enabled": true,
           "TargetTypes": [
             "Player"
           ],
           "KeepLoaded": false,
           "Color": {
-            "X": 1.0,
-            "Y": 1.0,
-            "Z": 0.0
+            "X": 0.0,
+            "Y": 0.0,
+            "Z": 1.0
           },
-          "PrefabIndex": 13
+          "PrefabIndex": 14
         }
       }
     },
@@ -582421,9 +582573,9 @@
       "Components": {
         "Transform": {
           "Position": {
-            "X": 34.5,
+            "X": 43.5,
             "Y": 0.5,
-            "Z": -12.5
+            "Z": 28.5
           },
           "Rotation": {
             "Pitch": 0.0,
@@ -582450,8 +582602,8 @@
               "Type": "PlaceBlock",
               "Event": "TAG_ADDED",
               "Interval": 0.0,
-              "Delay": 0.0,
-              "BlockType": "Furniture_Jungle_Brazier",
+              "Delay": 0.05000000074505806,
+              "BlockType": "Furniture_Temple_Dark_Brazier",
               "Position": {
                 "X": 0.0,
                 "Y": 0.0,
@@ -582464,7 +582616,7 @@
               "Type": "PlaySound",
               "Event": "TAG_ADDED",
               "Interval": 0.0,
-              "Delay": 0.0,
+              "Delay": 0.05000000074505806,
               "SoundEvent": "SFX_Brazier_Build",
               "Volume": 1.0,
               "Pitch": 1.0
@@ -582483,8 +582635,7 @@
             "Y": 0.0,
             "Z": 0.0
           },
-          "CooldownMode": "TOTAL",
-          "PrefabIndex": 14
+          "PrefabIndex": 15
         }
       }
     },
@@ -582550,536 +582701,7 @@
             "Y": 0.0,
             "Z": 0.0
           },
-          "PrefabIndex": 15
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 57.0,
-            "Y": 2.5,
-            "Z": 26.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 0.9490196108818054,
-            "Y": 1.0,
-            "Z": 0.0
-          },
           "PrefabIndex": 16
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 45.0,
-            "Y": 2.5,
-            "Z": -10.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 1.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 17
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 21.0,
-            "Y": 2.5,
-            "Z": 26.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.9725490212440491,
-            "Z": 0.0
-          },
-          "PrefabIndex": 18
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 43.5,
-            "Y": 0.5,
-            "Z": 24.5
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -0.5,
-              "Y": -0.5,
-              "Z": -0.5
-            },
-            "Max": {
-              "X": 0.5,
-              "Y": 0.5,
-              "Z": 0.5
-            }
-          },
-          "Effects": [
-            {
-              "Type": "PlaceBlock",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "BlockType": "Furniture_Temple_Dark_Brazier",
-              "Position": {
-                "X": 0.0,
-                "Y": 0.0,
-                "Z": 0.0
-              },
-              "Origin": "VolumeOrigin",
-              "ReplaceMode": "Always"
-            },
-            {
-              "Type": "PlaySound",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "SoundEvent": "SFX_Brazier_Build",
-              "Volume": 1.0,
-              "Pitch": 1.0
-            }
-          ],
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "Tags": {
-            "brazier_lit": "false"
-          },
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 19
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 34.5,
-            "Y": 0.5,
-            "Z": -8.5
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -0.5,
-              "Y": -0.5,
-              "Z": -0.5
-            },
-            "Max": {
-              "X": 0.5,
-              "Y": 0.5,
-              "Z": 0.5
-            }
-          },
-          "Effects": [
-            {
-              "Type": "PlaceBlock",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.10000000149011612,
-              "BlockType": "Furniture_Jungle_Brazier",
-              "Position": {
-                "X": 0.0,
-                "Y": 0.0,
-                "Z": 0.0
-              },
-              "Origin": "VolumeOrigin",
-              "ReplaceMode": "Always"
-            },
-            {
-              "Type": "PlaySound",
-              "Event": "TAG_ADDED",
-              "Interval": 0.0,
-              "Delay": 0.10000000149011612,
-              "SoundEvent": "SFX_Brazier_Build",
-              "Volume": 10.0,
-              "Pitch": 10.0
-            }
-          ],
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "Tags": {
-            "brazier_lit": "false"
-          },
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 20
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 21.0,
-            "Y": 2.5,
-            "Z": 2.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Effects": [
-            {
-              "Type": "SetWeather",
-              "Event": "ENTER",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "Weather": "Dungeon_Cursed_Crypt_Graveyard",
-              "PlayerOnly": true,
-              "ResetWeather": true
-            },
-            {
-              "Type": "SendMessage",
-              "Event": "ENTER",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "Message": "This place feels ... strange"
-            },
-            {
-              "Type": "TriggerNpcMarkers",
-              "Event": "ENTER",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "MarkerType": "Welcome_Animal",
-              "MatchTag": "",
-              "Center": "Volume"
-            }
-          ],
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.8666666746139526,
-            "Z": 0.0
-          },
-          "PrefabIndex": 21
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 57.0,
-            "Y": 2.5,
-            "Z": 14.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 1.0,
-            "Y": 0.9490196108818054,
-            "Z": 0.0
-          },
-          "PrefabIndex": 22
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 65.5,
-            "Y": 2.5,
-            "Z": 14.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.5,
-              "Y": -2.5,
-              "Z": -4.0
-            },
-            "Max": {
-              "X": 3.5,
-              "Y": 2.5,
-              "Z": 4.0
-            }
-          },
-          "Effects": [
-            {
-              "Type": "SetWeather",
-              "Event": "ENTER",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "Weather": "Zone4_Underground_Jungle",
-              "PlayerOnly": true,
-              "ResetWeather": false
-            }
-          ],
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 0.3960784375667572,
-            "Y": 1.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 23
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 21.0,
-            "Y": 2.5,
-            "Z": -10.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 0.9725490212440491,
-            "Y": 1.0,
-            "Z": 0.0
-          },
-          "PrefabIndex": 24
-        }
-      }
-    },
-    {
-      "Components": {
-        "Transform": {
-          "Position": {
-            "X": 45.0,
-            "Y": 2.5,
-            "Z": 26.0
-          },
-          "Rotation": {
-            "Pitch": 0.0,
-            "Yaw": 0.0,
-            "Roll": 0.0
-          }
-        },
-        "TriggerVolume": {
-          "Shape": {
-            "Type": "Box",
-            "Min": {
-              "X": -3.0,
-              "Y": -2.5,
-              "Z": -3.0
-            },
-            "Max": {
-              "X": 3.0,
-              "Y": 2.5,
-              "Z": 3.0
-            }
-          },
-          "Effects": [
-            {
-              "Type": "ModifyTags",
-              "Event": "ENTER",
-              "Interval": 0.0,
-              "Delay": 0.0,
-              "Operation": "Set",
-              "TagKey": "brazier_lit",
-              "TagValue": "true",
-              "MatchKey": "brazier_lit",
-              "MatchValue": "",
-              "Radius": 5.0,
-              "Center": "Volume"
-            }
-          ],
-          "Enabled": true,
-          "TargetTypes": [
-            "Player"
-          ],
-          "KeepLoaded": false,
-          "Color": {
-            "X": 0.0,
-            "Y": 0.0,
-            "Z": 1.0
-          },
-          "PrefabIndex": 25
         }
       }
     }
