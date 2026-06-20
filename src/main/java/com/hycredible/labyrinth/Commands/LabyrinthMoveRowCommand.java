@@ -19,6 +19,7 @@ import com.hypixel.hytale.server.core.entity.entities.BlockEntity;
 import com.hypixel.hytale.server.core.modules.entity.DespawnComponent;
 import com.hypixel.hytale.server.core.modules.entity.EntityModule;
 import com.hypixel.hytale.server.core.modules.entity.component.TransformComponent;
+import com.hypixel.hytale.server.core.modules.entity.teleport.Teleport;
 import com.hypixel.hytale.server.core.modules.time.TimeResource;
 import com.hypixel.hytale.server.core.prefab.selection.standard.BlockSelection;
 import com.hypixel.hytale.server.core.universe.world.SetBlockSettings;
@@ -214,7 +215,8 @@ public class LabyrinthMoveRowCommand extends CommandBase {
                 if (playerStart != null && ref.isValid()) {
                     TransformComponent tc = store.getComponent(ref, TransformComponent.getComponentType());
                     if (tc != null) {
-                        tc.teleportPosition(new Vector3d(playerStart.x + deltaX, playerStart.y, playerStart.z + deltaZ));
+                        store.putComponent(ref, Teleport.getComponentType(),
+                            Teleport.createForPlayer(new Vector3d(playerStart.x + deltaX, playerStart.y, playerStart.z + deltaZ), tc.getRotation()));
                     }
                 }
                 selection.placeNoReturn(world, new Vector3i(deltaX, 0, deltaZ), entityStore);
@@ -292,16 +294,16 @@ public class LabyrinthMoveRowCommand extends CommandBase {
                 tc.setPosition(new Vector3d(s.x + t * deltaX, s.y, s.z + t * deltaZ));
             }
 
-            if (playerStart != null && playerRef.isValid()) {
-                TransformComponent tc = playerStore.getComponent(playerRef, TransformComponent.getComponentType());
-                if (tc != null) {
-                    tc.teleportPosition(new Vector3d(playerStart.x + t * deltaX, playerStart.y, playerStart.z + t * deltaZ));
-                }
-            }
-
             if (t < 1.0f) {
                 world.execute(tickHolder[0]);
             } else {
+                if (playerStart != null && playerRef.isValid()) {
+                    TransformComponent tc = playerStore.getComponent(playerRef, TransformComponent.getComponentType());
+                    if (tc != null) {
+                        playerStore.putComponent(playerRef, Teleport.getComponentType(),
+                            Teleport.createForPlayer(new Vector3d(playerStart.x + deltaX, playerStart.y, playerStart.z + deltaZ), tc.getRotation()));
+                    }
+                }
                 for (Ref<EntityStore> entityRef : blockEntityRefs) {
                     if (entityRef.isValid()) {
                         entityStore.removeEntity(entityRef, RemoveReason.REMOVE);
