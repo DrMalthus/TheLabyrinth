@@ -1,7 +1,7 @@
 {
   "TranslationProperties": {
-    "Name": "server.items.Labyrinth_Block.name",
-    "Description": "server.items.Labyrinth_Block.description"
+    "Name": "server.items.labyrinth_block.name",
+    "Description": "server.items.labyrinth_block.description"
   },
   "PlayerAnimationsId": "Block",
   "Categories": [""],

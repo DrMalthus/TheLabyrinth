@@ -5,7 +5,12 @@
   "Description": "A pack for a horror minigame including tileset for labyrinths",
   "Authors": [
     {
-      "Name": "regenesis",
+      "Name": "Regenesis",
+      "Email": "",
+      "Url": ""
+    },
+    {
+      "Name": "DrMalthus",
       "Email": "",
       "Url": ""
     }

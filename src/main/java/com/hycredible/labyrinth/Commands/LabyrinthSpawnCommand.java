@@ -53,7 +53,7 @@ public class LabyrinthSpawnCommand extends CommandBase {
             int gridOriginX = playerX - OFFSET_WEST;
             int gridOriginZ = playerZ - OFFSET_NORTH;
 
-            Placer.placePrefab("Labyrinth_Triggerless", world, new Vector3i(playerX, playerY, playerZ));
+            Placer.placePrefab("Labyrinth_Done", world, new Vector3i(playerX, playerY, playerZ));
             LabyrinthState.set(gridOriginX, playerY, gridOriginZ, SECTIONS_X, SECTIONS_Z);
 
             Store<EntityStore> worldEntityStore = world.getEntityStore().getStore();

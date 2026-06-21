@@ -4,13 +4,13 @@
   "Modify": {
     "Appearance": "Werewolf",
     "WanderRadius": 42,
-    "ViewRange": 1,
-    "HearingRange": 1,
+    "ViewRange": 2,
+    "HearingRange": 4,
     "DropList": "Drop_Werewolf",
-    "MaxSpeed": 1,
+    "MaxSpeed": 5,
     "Attack": "Root_NPC_Attack_Melee",
     "AlwaysSleepAtNight": false,
-    "MaxHealth": 1,
+    "MaxHealth": 666,
     "IsMemory": true,
     "MemoriesCategory": "Undead",
     "_InteractionVars": {
@@ -35,7 +35,7 @@
             "DamageCalculator": {
               "Type": "Absolute",
               "BaseDamage": {
-                "Physical": 66
+                "Physical": 666
               },
               "RandomPercentageModifier": 0.1
             }
