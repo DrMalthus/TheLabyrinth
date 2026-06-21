@@ -1,2 +1,4 @@
 # TheLabyrinth
-Hytale minigame
+
+Usage Guide:
+Spawn the Labyrinth by using /labyrinth:spawn
